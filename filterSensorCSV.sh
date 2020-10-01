@@ -7,7 +7,7 @@ export LC_ALL=C
 # download from http://archive.sensor.community
 # preferably from http://archive.sensor.community/csv_per_month, as these include the whole month
 inputCSV="${1:?You must provide the path to a csv}"
-tmpFilePrefix="$(basename $inputCSV)"
+tmpFilePrefix="tmp-$(basename $inputCSV)"
 
 function clean() {
   find . -maxdepth 1 -type f -name "$tmpFilePrefix-*" -delete
